@@ -1,0 +1,52 @@
+// In this file, you can define task to manipulate all projects
+
+// A task can explicitely depend on a set task of the sub projects
+// When you use the name of a subproject, it must be included by the settings.gradle file
+task parser {
+	dependsOn gradle.includedBuild('connie').task(':connie-parser:sableccParser')
+	dependsOn gradle.includedBuild('openflexo-core').task(':fml-parser:sableccParser')
+	dependsOn gradle.includedBuild('openflexo-core').task(':fml-cli:sableccParser')
+}
+
+// Sometimes, you need to exclude some included projects
+// Here, `sub` contains the list of included projects except for the 'openflexo-buildplugin'
+def sub = gradle.includedBuilds.findAll {ib -> !ib.name.startsWith('openflexo-buildplugin')}
+
+// A usual task for compiling all sub projects except the build plugin
+task compile {
+    dependsOn sub*.task(':compile')
+}
+
+// Testing all the sub projects
+task test(type: Test, overwrite: true)  {
+    dependsOn sub*.task(':test')
+}
+
+// Cleaning all the sub projects
+task cleanAll(type: Delete, overwrite: true) {
+    dependsOn sub*.task(':clean')
+}
+
+// Collecting all the dependencies
+task dep {
+    dependsOn sub*.task(':dep')
+}
+
+task gitPull {
+     dependsOn sub*.task(':gitPull')
+}
+
+
+// Launching tasks
+task freemodeller {
+    dependsOn gradle.includedBuild('openflexo-packaging').task(':packages:freemodelling:run')
+}
+task designer {
+    dependsOn gradle.includedBuild('openflexo-packaging').task(':packages:openflexo-designer:run')
+}
+task maintainer {
+    dependsOn gradle.includedBuild('openflexo-packaging').task(':packages:flexomaintainer:run')
+}
+task formose {
+    dependsOn gradle.includedBuild('formose').task(':packages:formose-app:run')
+}

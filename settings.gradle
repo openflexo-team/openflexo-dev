@@ -1,0 +1,24 @@
+// The root project name
+rootProject.name='openflexo-dev'
+
+// The list of projects you will work on
+// For each projects, you must have a 'checkouted' version of the corresponding repository
+// The includes below suppose that the local copy of the needed repositories are in the parent directory of the current directory
+includeBuild '../openflexo-buildplugin'
+includeBuild '../connie'
+includeBuild '../diana'
+includeBuild '../gina'
+includeBuild '../pamela'
+includeBuild '../openflexo-utils'
+includeBuild '../openflexo-core'
+includeBuild '../openflexo-technology-adapters'
+includeBuild '../openflexo-jdbc'
+includeBuild '../openflexo-pdf'
+includeBuild '../openflexo-emf'
+includeBuild '../openflexo-owl'
+includeBuild '../openflexo-kafka'
+includeBuild '../openflexo-http'
+includeBuild '../modelers'
+includeBuild '../openflexo-integration-tests'
+includeBuild '../openflexo-modules'
+includeBuild '../openflexo-packaging'
