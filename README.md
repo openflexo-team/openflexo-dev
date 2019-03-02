@@ -1,9 +1,14 @@
 # openflexo-dev
-A template for a development environment for the openflexo framework
-
-We suppose that : java (>= 8), gradle (>=4.10) and git are installed on your machine
+A template for a development environment for the openflexo framework.
 
 
+## Installation
+
+### Requirements
+We suppose that java (>= 8), gradle (>=3.4.1) and git are installed on your machine.
+
+
+### Process
 1) create a directory for your working env
 
 ```
@@ -57,5 +62,7 @@ You must have at least executed one time the task parser if your development env
 
 2) Import using `existing gradle project` your previously created `openflexo-dev` directory
 Eclipse should create automagically all the needed projects.
+
+If you use a java >= 9, you will have manually configure the buildpath
 
 3) develop, test, push and enjoy.

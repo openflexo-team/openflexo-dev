@@ -2,11 +2,13 @@
 
 // A task can explicitely depend on a set task of the sub projects
 // When you use the name of a subproject, it must be included by the settings.gradle file
-// task parser {
-// 	dependsOn gradle.includedBuild('connie').task(':connie-parser:sableccParser')
-// 	dependsOn gradle.includedBuild('openflexo-core').task(':fml-parser:sableccParser')
-// 	dependsOn gradle.includedBuild('openflexo-core').task(':fml-cli:sableccParser')
-// }
+task parser {
+	dependsOn gradle.includedBuild('connie').task(':connie-parser:sableccParser')
+	dependsOn gradle.includedBuild('openflexo-core').task(':fml-parser:sableccParser')
+	dependsOn gradle.includedBuild('openflexo-core').task(':fml-cli:sableccParser')
+	dependsOn gradle.includedBuild('openflexo-technology-adapters').task(':dsl-ta-parser:sableccParser')
+	dependsOn gradle.includedBuild('formose').task(':b-ta-parser:sableccParser')
+}
 
 // Sometimes, you need to exclude some included projects
 // Here, `sub` contains the list of included projects except for the 'openflexo-buildplugin'
@@ -38,15 +40,15 @@ task gitPull {
 
 
 // Launching tasks
-// task freemodeller {
-//     dependsOn gradle.includedBuild('openflexo-packaging').task(':packages:freemodelling:run')
-// }
-// task designer {
-//     dependsOn gradle.includedBuild('openflexo-packaging').task(':packages:openflexo-designer:run')
-// }
-// task maintainer {
-//     dependsOn gradle.includedBuild('openflexo-packaging').task(':packages:flexomaintainer:run')
-// }
-// task formose {
-//     dependsOn gradle.includedBuild('formose').task(':packages:formose-app:run')
-// }
+task freemodeller {
+    dependsOn gradle.includedBuild('openflexo-packaging').task(':packages:freemodelling:run')
+}
+task designer {
+    dependsOn gradle.includedBuild('openflexo-packaging').task(':packages:openflexo-designer:run')
+}
+task maintainer {
+    dependsOn gradle.includedBuild('openflexo-packaging').task(':packages:flexomaintainer:run')
+}
+task formose {
+    dependsOn gradle.includedBuild('formose').task(':packages:formose-app:run')
+}
