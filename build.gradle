@@ -50,5 +50,5 @@ task maintainer {
     dependsOn gradle.includedBuild('openflexo-packaging').task(':packages:flexomaintainer:run')
 }
 task formose {
-    dependsOn gradle.includedBuild('formose').task(':packages:formose-app:run')
+    dependsOn gradle.includedBuild('formose').task(':formose-app:run')
 }
