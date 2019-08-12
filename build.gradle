@@ -34,11 +34,6 @@ task dep {
     dependsOn sub*.task(':dep')
 }
 
-task gitPull {
-     dependsOn sub*.task(':gitPull')
-}
-
-
 // Launching tasks
 task freemodeller {
     dependsOn gradle.includedBuild('openflexo-packaging').task(':packages:freemodelling:run')
