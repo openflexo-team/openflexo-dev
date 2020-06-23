@@ -17,16 +17,6 @@ task compile {
     dependsOn sub*.task(':compile')
 }
 
-// Testing all the sub projects
-task test(type: Test, overwrite: true)  {
-    dependsOn sub*.task(':test')
-}
-
-// Cleaning all the sub projects
-task cleanAll(type: Delete, overwrite: true) {
-    dependsOn sub*.task(':clean')
-}
-
 // Collecting all the dependencies
 task dep {
     dependsOn sub*.task(':dep')
