@@ -7,7 +7,7 @@ task parser {
 	dependsOn gradle.includedBuild('openflexo-core').task(':fml-parser:sableccParser')
 	dependsOn gradle.includedBuild('openflexo-core').task(':fml-cli:sableccParser')
 	dependsOn gradle.includedBuild('openflexo-technology-adapters').task(':dsl-ta-parser:sableccParser')
-	dependsOn gradle.includedBuild('formose').task(':b-ta-parser:sableccParser')
+	dependsOn gradle.includedBuild('formod').task(':b-ta-parser:sableccParser')
 }
 
 // Sometimes, you need to exclude some included projects
@@ -17,16 +17,6 @@ def sub = gradle.includedBuilds.findAll {ib -> !ib.name.startsWith('openflexo-bu
 // A usual task for compiling all sub projects except the build plugin
 task compile {
     dependsOn sub*.task(':compile')
-}
-
-// Testing all the sub projects
-task test(type: Test, overwrite: true)  {
-    dependsOn sub*.task(':test')
-}
-
-// Cleaning all the sub projects
-task cleanAll(type: Delete, overwrite: true) {
-    dependsOn sub*.task(':clean')
 }
 
 // Collecting all the dependencies
@@ -44,6 +34,6 @@ task designer {
 task maintainer {
     dependsOn gradle.includedBuild('openflexo-packaging').task(':packages:flexomaintainer:run')
 }
-task formose {
-    dependsOn gradle.includedBuild('formose').task(':formose-app:run')
+task formod {
+    dependsOn gradle.includedBuild('formod').task(':formose-app:run')
 }
