@@ -13,7 +13,6 @@ includeBuild '../openflexo-utils'
 includeBuild '../openflexo-core'
 includeBuild '../modelers'
 includeBuild '../openflexo-integration-tests'
-includeBuild '../openflexo-modules'
 includeBuild '../openflexo-packaging'
 //includeBuild '../pimca'
 //includeBuild '../cta'
@@ -36,3 +35,10 @@ includeBuild '../openflexo-pptx'
 includeBuild '../openflexo-rhapsody'
 includeBuild '../openflexo-xlsx'
 includeBuild '../openflexo-xml'
+
+// Application modules
+includeBuild '../openflexo-modules'
+includeBuild '../openflexo-modeller'
+includeBuild '../free-modelling-editor'
+includeBuild '../enterprise-architecture-editor'
+
