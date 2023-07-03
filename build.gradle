@@ -40,3 +40,6 @@ task gitPull {
 // task formose {
 //     dependsOn gradle.includedBuild('formose').task(':formose-app:run')
 // }
+//  task server {
+//      dependsOn gradle.includedBuild('openflexo-http').task(':http-server:run')
+//  }
