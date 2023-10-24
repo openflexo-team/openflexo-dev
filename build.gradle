@@ -43,3 +43,6 @@ task gitPull {
 //  task server {
 //      dependsOn gradle.includedBuild('openflexo-http').task(':http-server:run')
 //  }
+// task generateDoc {
+//     dependsOn gradle.includedBuild('openflexo-integration-tests').task(':ta-doc-generator:run')
+// }
