@@ -9,8 +9,8 @@
 // }
 
 // Sometimes, you need to exclude some included projects
-// Here, `sub` contains the list of included projects except for the 'openflexo-buildplugin'
-def sub = gradle.includedBuilds.findAll {ib -> !ib.name.startsWith('openflexo-buildplugin')}
+// Here, `sub` contains the list of included projects except for the plugins ('openflexo-buildplugin', 'gradle-sablecc-plugin')
+def sub = gradle.includedBuilds.findAll {ib -> !ib.name.startsWith('openflexo-buildplugin') && !ib.name.startsWith('gradle-sablecc-plugin')}
 
 // A usual task for compiling all sub projects except the build plugin
 task compile {
