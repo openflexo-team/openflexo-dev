@@ -5,6 +5,7 @@ rootProject.name='openflexo-dev'
 // For each projects, you must have a 'checkouted' version of the corresponding repository
 // The includes below suppose that the local copy of the needed repositories are in the parent directory of the current directory
 includeBuild '../openflexo-buildplugin'
+includeBuild '../gradle-sablecc-plugin'
 includeBuild '../connie'
 includeBuild '../diana'
 includeBuild '../gina'
@@ -16,7 +17,7 @@ includeBuild '../openflexo-ui'
 includeBuild '../modelers'
 includeBuild '../openflexo-integration-tests'
 includeBuild '../openflexo-packaging'
-//includeBuild '../formod'
+includeBuild '../formod'
 
 // Technology adapters
 includeBuild '../openflexo-technology-adapters'
